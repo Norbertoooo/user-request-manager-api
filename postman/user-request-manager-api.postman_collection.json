@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "426d64f3-c8c8-441d-ab11-13dcb522e75e",
+		"name": "user-request-manager-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-user-v1}}/1",
+							"host": [
+								"{{basic-url-user-v1}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\",\r\n    \"email\": \"email@gmail\",\r\n    \"password\": \"password\",\r\n    \"role\": \"SIMPLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-user-v1}}",
+							"host": [
+								"{{basic-url-user-v1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1, \r\n    \"name\": \"teste-modificado\",\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"ADMINISTRATOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-user-v1}}",
+							"host": [
+								"{{basic-url-user-v1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-user-v1}}/login",
+							"host": [
+								"{{basic-url-user-v1}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "request",
+			"item": [
+				{
+					"name": "get request by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-request-v1}}/1",
+							"host": [
+								"{{basic-url-request-v1}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-request-v1}}",
+							"host": [
+								"{{basic-url-request-v1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get requests by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-request-v1}}/user/1",
+							"host": [
+								"{{basic-url-request-v1}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"subject\",\r\n    \"description\": \"description\",\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"name\": \"teste\",\r\n        \"email\": \"email@gmail\",\r\n        \"password\": \"5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\",\r\n        \"role\": \"SIMPLE\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-request-v1}}",
+							"host": [
+								"{{basic-url-request-v1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-request-v1}}",
+							"host": [
+								"{{basic-url-request-v1}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "request-stage",
+			"item": [
+				{
+					"name": "get request stage by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-request-stage-v1}}/1",
+							"host": [
+								"{{basic-url-request-stage-v1}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all request stages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basic-url-request-stage-v1}}",
+							"host": [
+								"{{basic-url-request-stage-v1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new request stage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"description\",\r\n    \"state\": \"IN_PROGRESS\",\r\n    \"request\": {\r\n        \"id\": 1,\r\n        \"subject\": \"subject\",\r\n        \"description\": \"description\",\r\n        \"creationDate\": \"2022-05-08T00:25:09.974991\",\r\n        \"state\": \"OPEN\",\r\n        \"user\": {\r\n            \"id\": 1,\r\n            \"name\": \"teste\",\r\n            \"email\": \"email\",\r\n            \"password\": \"5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\",\r\n            \"role\": \"SIMPLE\"\r\n        }\r\n    },\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"name\": \"teste\",\r\n        \"email\": \"email@gmail\",\r\n        \"password\": \"5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\",\r\n        \"role\": \"SIMPLE\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basic-url-request-stage-v1}}",
+							"host": [
+								"{{basic-url-request-stage-v1}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
