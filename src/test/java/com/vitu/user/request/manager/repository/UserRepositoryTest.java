@@ -42,4 +42,15 @@ class UserRepositoryTest {
         assertEquals(user.getPassword(), userOptional.get().getPassword());
         assertEquals(user.getRole(), userOptional.get().getRole());
     }
+
+    @Test
+    void updateRole() {
+        User user = createUser(NAME, PASSWORD, EMAIL, Role.SIMPLE);
+
+        testEntityManager.persist(user);
+
+        int effectedRows = userRepository.updateRole(1L, Role.ADMINISTRATOR);
+
+        assertEquals(1, effectedRows);
+    }
 }

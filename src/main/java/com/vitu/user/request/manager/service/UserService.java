@@ -1,5 +1,6 @@
 package com.vitu.user.request.manager.service;
 
+import com.vitu.user.request.manager.domain.Role;
 import com.vitu.user.request.manager.domain.User;
 import org.springframework.data.domain.Page;
 
@@ -18,5 +19,7 @@ public interface UserService {
     Boolean existById(Long id);
 
     User getByEmailAndPassword(String email, String password);
+
+    User updateRole(Long id, Role role);
 
 }

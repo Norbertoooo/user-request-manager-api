@@ -1,5 +1,6 @@
 package com.vitu.user.request.manager.service.impl;
 
+import com.vitu.user.request.manager.domain.Role;
 import com.vitu.user.request.manager.domain.User;
 import com.vitu.user.request.manager.exception.NotFoundException;
 import com.vitu.user.request.manager.repository.UserRepository;
@@ -64,5 +65,11 @@ public class UserServiceImpl implements UserService {
         log.info("Finding user by email and password: {}, {}", email, password);
         return userRepository.findByEmailAndPassword(email, password)
                 .orElseThrow();
+    }
+
+    @Override
+    public User updateRole(Long id, Role role) {
+        userRepository.updateRole(id, role);
+        return getById(id);
     }
 }
