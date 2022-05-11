@@ -5,6 +5,7 @@ import com.vitu.user.request.manager.web.dto.RequestStageDto;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RequestStageMapper {
 
@@ -15,7 +16,7 @@ public class RequestStageMapper {
     }
 
     public static List<RequestStage> toDomain(List<RequestStageDto> requestStageDtos) {
-        return requestStageDtos.stream().map(RequestStageMapper::toDomain).toList();
+        return requestStageDtos.stream().map(RequestStageMapper::toDomain).collect(Collectors.toList());
     }
 
     public static RequestStageDto toDto(RequestStage requestStage) {
@@ -23,6 +24,6 @@ public class RequestStageMapper {
     }
 
     public static List<RequestStageDto> toDto(List<RequestStage> requestStages) {
-        return requestStages.stream().map(RequestStageMapper::toDto).toList();
+        return requestStages.stream().map(RequestStageMapper::toDto).collect(Collectors.toList());
     }
 }

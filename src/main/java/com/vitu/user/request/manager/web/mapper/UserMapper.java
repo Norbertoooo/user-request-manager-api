@@ -5,6 +5,7 @@ import com.vitu.user.request.manager.web.dto.UserDto;
 import org.springframework.beans.BeanUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public interface UserMapper {
 
@@ -15,7 +16,7 @@ public interface UserMapper {
     }
 
     static List<User> toDomain(List<UserDto> userDtos) {
-        return userDtos.stream().map(UserMapper::toDomain).toList();
+        return userDtos.stream().map(UserMapper::toDomain).collect(Collectors.toList());
     }
 
     static UserDto toDto(User user) {
@@ -25,7 +26,7 @@ public interface UserMapper {
     }
 
     static List<UserDto> toDto(List<User> users) {
-        return users.stream().map(UserMapper::toDto).toList();
+        return users.stream().map(UserMapper::toDto).collect(Collectors.toList());
     }
 
 
