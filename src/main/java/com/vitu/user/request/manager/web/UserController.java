@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -47,7 +49,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserDto> login(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> login(@RequestBody @Valid UserDto userDto) {
         User user = userService.getByEmailAndPassword(userDto.getEmail(), userDto.getPassword());
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toDto(user));
     }
