@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    open-in-view: false
+  datasource:
+    url: ${DB_URL_PROD}
+    username: ${DB_USERNAME_PROD}
+    password: ${DB_PASSWORD_PROD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: ${SERVER_PORT}
