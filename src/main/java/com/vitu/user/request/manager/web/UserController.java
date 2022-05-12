@@ -36,14 +36,14 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> create(@RequestBody @Valid UserDto userDto) {
         log.info("Receive request to create new user: {}", userDto);
         User user = userService.save(UserMapper.toDomain(userDto));
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toDto(user));
     }
 
     @PutMapping
-    public ResponseEntity<UserDto> update(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> update(@RequestBody @Valid UserDto userDto) {
         User user = userService.update(UserMapper.toDomain(userDto));
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toDto(user));
     }
